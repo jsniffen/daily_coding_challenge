@@ -24,4 +24,4 @@ def add(x, y):
     return x + y
 
 s = Scheduler(1, add, 10, 20)
-print(s.result())
+assert s.result() == 30

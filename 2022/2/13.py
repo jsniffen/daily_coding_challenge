@@ -38,13 +38,12 @@ def largest_sum_constant(nums):
             curr = nums[i] + max(p1, p2)
 
         queue.append(curr)
-        print(queue)
         longest = max(longest, curr)
 
     return longest
 
-# assert largest_sum_constant([2, 4, 6, 2, 5]) == 13
-# assert largest_sum_constant([5, 1, 1, 5]) == 10
+assert largest_sum([2, 4, 6, 2, 5]) == 13
+assert largest_sum([5, 1, 1, 5]) == 10
+assert largest_sum_constant([2, 4, 6, 2, 5]) == 13
+assert largest_sum_constant([5, 1, 1, 5]) == 10
 
-# assert largest_sum([2, 4, 6, 2, 5]) == 13
-# assert largest_sum([5, 1, 1, 5]) == 10

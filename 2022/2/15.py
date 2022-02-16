@@ -11,8 +11,11 @@
 import json
 
 class Trie:
-    def __init__(self):
+    def __init__(self, words):
         self.data = {}
+
+        for word in words:
+            self.add_word(word)
 
     def __repr__(self):
         return json.dumps(self.data, indent=2)
@@ -48,7 +51,5 @@ class Trie:
         dfs(level, [c for c in prefix])
         return words
 
-trie = Trie()
-for word in ["dog", "deer", "deal"]:
-    trie.add_word(word)
-print(trie.search("de"))
+trie = Trie(["dog", "deer", "deal"])
+assert trie.search("de") == ["deer", "deal"]
